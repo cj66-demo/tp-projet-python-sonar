@@ -6,15 +6,18 @@ pipeline {
 				echo "Etape de build"
 				sh 'python3 --version'
 			}
-		}
-	 
+		}	 
       	        stage( 'Scan') {
         		steps {
                                 echo "Etape de execution"
 				sh 'python3 dateEnPython.py'
-          		 
-               }
+          		  }    
+	         }	 
+		stage('SonarQube Analysis') {
+     			withSonarQubeEnv('sonar') {
+         			sh "python3 dateEnPython.py sonar:sonar"
+    			 }
     
-	}	 
-}
+		}
+	}
 }
