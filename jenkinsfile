@@ -1,0 +1,19 @@
+pipeline {
+	agent any
+	stages {
+		stage('monitor') {
+			steps {
+				echo "Etape de build"
+				sh 'python --version'
+			}
+		}
+	 
+      	        stage( 'Scan') {
+        		steps {
+                                echo "Etape de execution"
+				sh 'python3 dateEnPython.py'
+          		 
+               }
+    
+	}	 
+}
