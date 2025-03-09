@@ -16,7 +16,7 @@ pipeline {
 		stage('SonarQube Analysis') {
      			steps {
 				withSonarQubeEnv('sonarqube_container') {
-         				sh 'python3 dateEnPython.py sonar:sonar'
+         				sh 'python3 dateEnPython.py org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
     			 	}
     			}
 		}
