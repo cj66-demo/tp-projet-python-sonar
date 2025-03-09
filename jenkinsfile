@@ -14,10 +14,11 @@ pipeline {
           		  }    
 	         }	 
 		stage('SonarQube Analysis') {
-     			withSonarQubeEnv('sonar') {
-         			sh "python3 dateEnPython.py sonar:sonar"
-    			 }
-    
+     			steps {
+				withSonarQubeEnv('sonar') {
+         				sh "python3 dateEnPython.py sonar:sonar"
+    			 	}
+    			}
 		}
 	}
 }
