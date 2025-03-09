@@ -4,7 +4,7 @@ pipeline {
 		stage('monitor') {
 			steps {
 				echo "Etape de build"
-				sh 'python --version'
+				sh 'python3 --version'
 			}
 		}
 	 
